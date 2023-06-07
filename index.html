@@ -5,88 +5,210 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Phan Gia Khang</title>
-	<script src="main.js"></script>
+	<title>Phan Gia Khang - Bài tập - Chương I</title>
+	<link rel="stylesheet" href="app.css">
 	<style>
-		.form-input {
-			border: 1px solid #eee;
-			border-radius: 4px;
-			width: 20%;
-			height: 50px;
-			padding: 0 20px;
-			transition: 0.25 ease;
+		h2 {
+			color: #000;
+			text-align: center;
 		}
 
-		.form-input:focus {
-			border-color: #6a5af9;
+		h3 {
+			text-align: right;
 		}
 
-		.form-field {
-			position: relative;
+		.navbar {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #0095ff99;
+			display: flex;
+			justify-content: center;
 		}
 
-		.form-label {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			left: 181px;
-			user-select: none;
-			color: #999;
-			pointer-events: none;
-			transition: 0.25s ease;
-			border-color: #6a5af9;
+		li {
+			flex: 1;
+
 		}
 
-		.form-input:not(:placeholder-shown)+.form-label,
+		li a {
+			display: block;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
 
-		.form-input:focus+.form-label {
-			top: 0;
-			left: 171px;
-			padding: 0 10px;
-			display: inline-block;
-			background-color: #ffffff;
-			color: #6a5af9;
-			outline: #6a5af9;
+		li a:hover {
+			color: #000;
+			background-color: #eee;
+			font-weight: bold;
+		}
+
+		.active {
+			background-color: blue;
+			color: #fff;
+		}
+
+		.center {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 40%;
+		}
+
+		h1 {
+			text-align: right;
+		}
+
+		.tab {
+			padding-left: 40px;
+		}
+
+		.white {
+			color: white;
+		}
+
+		.code {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 50%;
 		}
 	</style>
 </head>
 
 <body>
-	<h1>
-		Web kiểm tra sự GAY của bạn
-	</h1>
-	<div class="form-field">
-		<form id="form">
-			<label for="Name">Nhập họ và tên của bạn:</label>
-			<input type="text" class="form-input" placeholder=" " id="name" />
-			<label for="Name" class="form-label">Họ và tên</label>
-			<button type="submit">Kiểm tra</button>
-		</form>
-	</div>
-	<div> <!-- Kết quả kiểm tra -->
-		<p id="result"></p>
-	</div>
-	<script>
-		// Lấy phần tử form
-		var form = document.getElementById("form");
-		// Lấy phần tử result
-		var result = document.getElementById("result");
-		// Thêm sự kiện submit cho form
-		form.addEventListener("submit", function (event) {
-			// Ngăn chặn hành động mặc định của form
-			event.preventDefault();
-			// Lấy giá trị của input name
-			var name = form.elements["name"].value;
-			// So sánh với tên Lê Mạnh Tường
-			if (name.toLowerCase() === "lê mạnh tường") {
-				// Thông báo bạn bị gay rồi
-				result.textContent = "Bạn bị GAY rồi";
-			} else {
-				// Thông báo chúc mừng bạn không bị gay
-				result.textContent = "Chúc mừng bạn không bị gay";
-			}
-		});
-	</script>
+	<h2>Website Lý thuyết - Bài tập ôn thi học sinh giỏi THCS</h2>
+	<h3>Tác giả: Phan Gia Khang</h3>
+	<ul class="navbar">
+		<li><a href="https://phangiakhang.github.io/home/"><i class="fa fa-home"></i> Trang chủ</a></li>
+		<li><a href="#"><i class="fa fa-book"></i> Lý thuyết</a></li>
+		<li><a href="#" class="active"><i class="fa fa-pencil"></i> Bài tập</a></li>
+		<li><a href="#"><i class="fa fa-file-text-o"></i> Đề thi thử</a></li>
+		<li><a href="#"><i class="fa fa-envelope"></i> Liên hệ</a></li>
+	</ul>
+	<h1>Chương số học</h1>
+	<h4>
+		Bài 1: Kiểm tra số hoàn hảo
+	</h4>
+	<p class="tab">
+		Số hoàn hảo là <strong>số có tổng các ước số nhỏ hơn nó bằng chính nó.</strong> <br>
+	</p>
+
+	<div> <!-- Viết chữ và bảng trên cùng 1 hàng-->
+		<table>
+			<tr>
+				<td><strong> Input: </strong>Số nguyên dương N (1 ≤ N ≤ 109)</td>
+				<td><strong>Ví dụ:</strong></td>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td><strong>Output: </strong>“Yes” nếu là số hoàn hảo, ngược lại xuất “No”</td>
+						</tr>
+						<tr>
+							<td class="white">
+								abc
+							</td>
+						</tr>
+						<tr>
+							<td class="white">
+								abc
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table border="1"> <!--Bảng Input Output-->
+						<tr>
+							<th>Input</th>
+							<th>Output</th>
+						</tr>
+						<tr>
+							<td>371</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td>324791234813534252</td>
+							<td>No</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<!-- Code -->
+		<p>
+			------------------------------------------------- Mã C++ -------------------------------------------------
+		</p>
+		<pre><code>
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+
+bool soHoanHao(ll n)
+{
+	ll sum = 0;
+	for (ll i = 1; i < n ; i++)
+		if (n%i == 0) sum += i;
+	return sum == n;
+
+}
+
+int main()
+{
+	#ifdef BITS_STDCPP_H 
+		ios_base::sync_with_stdio(false);
+		cin.tie(NULL); cout.tie(NULL);
+	#endif 
+	
+	ll n;
+	cin>>n;
+	cout << (soHoanHao(n) ? "Yes":"No") << endl;
+	return 0;
+}
+		</code></pre>
+		<p>
+			----------------------------------------------------------------------------------------------------------
+		</p>
 </body>
 
 </html>
+
+<!--
+					<td>
+					<pre><code>
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+
+bool soHoanHao(ll n)
+{
+    ll sum = 0;
+    for (ll i = 1; i < n ; i++)
+        if (n%i == 0) sum += i;
+    return sum == n;
+
+}
+
+int main()
+{
+    // Tăng tốc nhập xuất bằng cin, cout. Nếu sử dụng printf, scanf thì bỏ qua
+    #ifdef BITS_STDCPP_H // Nếu khai báo #include <bits/stdc++.h>
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL); cout.tie(NULL);
+    #endif 
+    
+    ll n;
+    cin>>n;
+    cout << (soHoanHao(n) ? "Yes":"No") << endl;
+    return 0;
+}
+					</code></pre>
+				</td>
+-->
